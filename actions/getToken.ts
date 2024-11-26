@@ -8,6 +8,7 @@ export async function getToken() {
       headers: Object.fromEntries(await headers()),
     },
     secret: process.env.AUTH_SECRET,
+    secureCookie: process.env.NODE_ENV === "production" ? true : false,
   });
 
   if (!token || !token.refresh_token) {
