@@ -11,7 +11,9 @@ export async function getToken() {
   });
 
   if (!token || !token.refresh_token) {
-    throw new Error(`[getToken] No Token or no refresh token: ${token}`);
+    throw new Error(
+      `[getToken] No Token or no refresh token: ${token}, ${process.env.AUTH_SECRET}`,
+    );
   }
 
   return token;
