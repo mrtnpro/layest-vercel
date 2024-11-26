@@ -1,0 +1,58 @@
+{
+  "auth": {
+    "signIn": {
+      "title": "Sign In",
+      "description": "Sign in securely using Keycloak.",
+      "button": "Sign in",
+      "noAccount": "Don't have an account?"
+    },
+    "signUp": {
+      "title": "Sign Up",
+      "description": "Enter your information to sign up for an account.",
+      "button": "Sign up",
+      "alreadyHaveAccount": "Already have an account?"
+    },
+    "form": {
+      "firstName": {
+        "label": "First Name",
+        "placeholder": "John"
+      },
+      "lastName": {
+        "label": "Last Name",
+        "placeholder": "Doe"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "john.doe@example.com"
+      },
+      "password": {
+        "label": "Password",
+        "placeholder": "Choose a secure password"
+      }
+    }
+  },
+  "app": {
+    "dashboard": {
+      "title": "Dashboard"
+    },
+    "projects": {
+      "title": "Projects"
+    },
+    "clients": {
+      "title": "Clients",
+      "button": {
+        "create": "Add Client"
+      },
+      "create": {
+        "title": "New Client",
+        "breadcrumb": "Create"
+      }
+    },
+    "account": {
+      "title": "Account"
+    },
+    "reports": {
+      "title": "Reports"
+    }
+  }
+}

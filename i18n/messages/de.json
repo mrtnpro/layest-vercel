@@ -1,0 +1,39 @@
+{
+  "auth": {
+    "signIn": {
+      "title": "Anmelden",
+      "description": "Melde dich sicher mit Keycloak an.",
+      "button": "Anmelden",
+      "noAccount": "Hast du noch kein Konto?"
+    },
+    "signUp": {
+      "title": "Registrieren",
+      "description": "Melde dich hier für dein Konto an.",
+      "button": "Registrieren",
+      "alreadyHaveAccount": "Hast du schon einen Account?"
+    },
+    "form": {
+      "firstName": {
+        "label": "Vorname",
+        "placeholder": "John"
+      },
+      "lastName": {
+        "label": "Nachname",
+        "placeholder": "Doe"
+      },
+      "email": {
+        "label": "E-Mail",
+        "placeholder": "john.doe@example.com"
+      },
+      "password": {
+        "label": "Passwort",
+        "placeholder": "Wähle ein sicheres Passwort"
+      }
+    }
+  },
+  "app": {
+    "dashboard": {
+      "title": "Dashboard"
+    }
+  }
+}

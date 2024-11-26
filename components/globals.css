@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  :root {
+    --background: theme(colors.palette.white);
+    --foreground: theme(colors.palette.neutral.900);
+    --card: var(--background);
+    --card-foreground: var(--foreground);
+    --popover: var(--background);
+    --popover-foreground: var(--foreground);
+    --primary: theme(colors.palette.light-blue.500);
+    --primary-foreground: theme(colors.palette.white);
+    --primary-foreground-muted: theme(colors.palette.light-blue.50);
+    --secondary: theme(colors.palette.dark-blue.900);
+    --secondary-foreground: theme(colors.palette.dark-blue.50);
+    --secondary-foreground-muted: theme(colors.palette.dark-blue.300);
+    --neutral: theme(colors.palette.neutral.100);
+    --neutral-foreground: theme(colors.palette.neutral.600);
+    --neutral-foreground-muted: theme(colors.palette.neutral.600);
+    --destructive: theme(colors.palette.error.100);
+    --destructive-foreground: theme(colors.palette.error.900);
+    --destructive-foreground-muted: theme(colors.palette.error.700);
+    --warning: theme(colors.palette.warning.100);
+    --warning-foreground: theme(colors.palette.warning.900);
+    --warning-foreground-muted: theme(colors.palette.warning.700);
+    --success: theme(colors.palette.success.100);
+    --success-foreground: theme(colors.palette.success.950);
+    --success-foreground-muted: theme(colors.palette.success.900);
+    --information: theme(colors.palette.information.100);
+    --information-foreground: theme(colors.palette.information.950);
+    --information-foreground-muted: theme(colors.palette.information.700);
+    --green: theme(colors.palette.green.50);
+    --green-foreground: theme(colors.palette.green.950);
+    --green-foreground-muted: theme(colors.palette.green.800);
+    --muted: theme(colors.palette.neutral.200);
+    --muted-foreground: theme(colors.palette.neutral.400);
+    --accent: theme(colors.palette.dark-blue.50);
+    --accent-foreground: theme(colors.palette.dark-blue.500);
+    --border: theme(colors.palette.neutral.100);
+    --input: theme(colors.palette.neutral.200);
+    --ring: theme(colors.palette.light-blue.400);
+    --chart-1: theme(colors.palette.light-blue.500);
+    --chart-2: theme(colors.palette.dark-blue.500);
+    --chart-3: theme(colors.palette.green.500);
+    --chart-4: theme(colors.palette.dark-blue.300);
+    --chart-5: theme(colors.palette.light-blue.700);
+    --radius: 0.5rem;
+    --sidebar-background: var(--secondary);
+    --sidebar-foreground: var(--secondary-foreground);
+    --sidebar-primary: var(--primary);
+    --sidebar-primary-foreground: var(--primary-foreground);
+    --sidebar-accent: theme(colors.palette.dark-blue.700);
+    --sidebar-accent-foreground: var(--sidebar-foreground);
+    --sidebar-border: theme(colors.palette.dark-blue.600);
+    --sidebar-ring: theme(colors.palette.dark-blue.300);
+    --spacing-container: 1rem;
+  }
+
+  @media (min-width: theme(screens.md)) {
+    :root {
+      --spacing-container: 1.5rem;
+    }
+  }
+}
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  a:any-link,
+  form button:not(:disabled) {
+    @apply cursor-pointer;
+  }
+}
+@media (max-height: 450px) {
+  .app-content {
+    @apply h-auto overflow-auto;
+  }
+
+  .app-content .overflow-y-auto {
+    @apply overflow-y-visible;
+  }
+}
