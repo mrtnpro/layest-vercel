@@ -18,7 +18,7 @@ export async function federatedSignOut() {
     });
 
     if (!token || !token.refresh_token) {
-      throw new Error("Token missing");
+      throw new Error(`[federatedSignOut] Token missing, ${token}`);
     }
 
     const endSession = await fetch(
@@ -38,7 +38,9 @@ export async function federatedSignOut() {
     );
 
     if (endSession && endSession.status && endSession.status >= 300) {
-      throw new Error("Could not end session");
+      throw new Error(
+        `[federatedSignOut] Could not end session, ${endSession}`,
+      );
     }
 
     // NOTE: Calling `await signOutAction()` here will call `redirect` from nextjs internally

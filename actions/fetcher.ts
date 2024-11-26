@@ -56,16 +56,20 @@ export default async function fetcher<
       return result as TResponse;
     } else {
       if (response.status === 400) {
+        throw new Error(`[fetcher]: 400 error: ${response}`);
         return result as TValidationError;
       }
       if (response.status === 401) {
+        throw new Error(`[fetcher]: 401 error: ${response}`);
         return result as TUnauthorizedError;
       }
       if (response.status === 403) {
+        throw new Error(`[fetcher]: 403 error: ${response}`);
         return result as TForbiddenError;
       }
 
       if (response.status === 500) {
+        throw new Error(`[fetcher]: 500 error: ${response}`);
         // throw new Error("500, internal server error");
       }
 
@@ -76,8 +80,7 @@ export default async function fetcher<
     }
   } catch (error) {
     console.error("Fetch", error);
-    // @ts-ignore
-    throw new Error("[fetcher]", error);
+    throw new Error(`[fetcher]: Caught error: ${error}`);
     // Output e.g.: "Fetch Error: 404, Not found"
   }
 }

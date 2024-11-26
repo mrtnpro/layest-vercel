@@ -13,7 +13,7 @@ export async function getClients() {
   });
 
   if (!result) {
-    throw new Error("getClients error", result);
+    throw new Error(`[getClients] No result: ${result}`);
   }
 
   return result as PaginatedClientsResponse;

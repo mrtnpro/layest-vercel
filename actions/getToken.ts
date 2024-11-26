@@ -11,7 +11,7 @@ export async function getToken() {
   });
 
   if (!token || !token.refresh_token) {
-    throw new Error("Token missing");
+    throw new Error(`[getToken] No Token or no refresh token: ${token}`);
   }
 
   return token;
