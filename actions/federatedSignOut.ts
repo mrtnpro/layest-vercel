@@ -1,25 +1,12 @@
 "use server";
 
-import { headers } from "next/headers";
-
 import { signOut as signOutAction } from "@/auth";
-import { getToken } from "next-auth/jwt";
+
+import { getToken } from "./getToken";
 
 export async function federatedSignOut() {
   try {
-    const token = await getToken({
-      req: {
-        headers: Object.fromEntries(await headers()),
-        // cookies: Object.fromEntries(
-        //   (await cookies()).getAll().map((c) => [c.name, c.value]),
-        // ),
-      },
-      secret: process.env.AUTH_SECRET,
-    });
-
-    if (!token || !token.refresh_token) {
-      throw new Error(`[federatedSignOut] Token missing, ${token}`);
-    }
+    const token = await getToken();
 
     const endSession = await fetch(
       "https://auth.layest.com/realms/Layest/protocol/openid-connect/logout",
@@ -32,7 +19,7 @@ export async function federatedSignOut() {
         body: new URLSearchParams({
           client_id: process.env.KEYCLOAK_ID!,
           client_secret: process.env.KEYCLOAK_SECRET!,
-          refresh_token: token.refresh_token,
+          refresh_token: token.refresh_token!,
         }),
       },
     );
